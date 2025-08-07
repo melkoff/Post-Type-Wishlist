@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Render wishlist toggle button
  */
@@ -17,8 +18,15 @@ add_shortcode('inspiration_favorite_btn', function () {
     ob_start();
 ?>
     <button class="inspiration-fav-btn <?php echo $state_class; ?>" data-post-id="<?php echo esc_attr($post_id); ?>">
-        <i class="fa<?php echo $in_wishlist ? 's' : 'r'; ?> fa-heart"></i> <?php echo $label; ?>
+        <span class="icon-heart">
+            <i class="fa<?php echo $in_wishlist ? 's' : 'r'; ?> fa-heart"></i>
+        </span>
+        <span class="spinner" style="display:none;">
+            <img class="spinner-img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/spinner.svg" alt="Loading..." style="width:16px;">
+        </span>
+        <?php echo $label; ?>
     </button>
-    <?php
+
+<?php
     return ob_get_clean();
 });

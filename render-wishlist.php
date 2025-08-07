@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Render wishlist list
  */
@@ -26,15 +27,19 @@ add_shortcode('inspiration_wishlist', function () {
             $title = get_the_title();
             $link = get_permalink();
             $thumb = get_the_post_thumbnail_url($id, 'medium');
-    ?>
+?>
             <div class="wishlist-card">
                 <div class="wishlist-card__image">
                     <a href="<?php echo esc_url($link); ?>">
                         <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($title); ?>">
                     </a>
                     <button class="wishlist-remove-btn" data-post-id="<?php echo esc_attr($id); ?>">
-                        <i class="fas fa-trash-alt"></i>
+                        <span class="icon-trash"><i class="fas fa-trash-alt"></i></span>
+                        <span class="spinner" style="display:none;">
+                            <img class="spinner-img" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/spinner.svg" alt="Loading...">
+                        </span>
                     </button>
+
                 </div>
                 <div class="wishlist-card__title">
                     <a href="<?php echo esc_url($link); ?>"><?php echo esc_html($title); ?></a>

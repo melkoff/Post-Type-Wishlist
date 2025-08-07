@@ -71,3 +71,8 @@
 .wishlist-remove-btn:hover {
     transform: scale(1.1);
 }
+
+.wishlist-remove-btn .spinner .spinner-img{
+    width:16px;
+    height:24px !important;
+}

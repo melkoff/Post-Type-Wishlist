@@ -22,3 +22,10 @@
 .inspiration-fav-btn.active:hover{
     background-color: #eee;
 }
+
+.inspiration-fav-btn:focus,
+.inspiration-fav-btn:focus-visible,
+.inspiration-fav-btn:focus-within {
+    background-color: unset !important;
+    color: #0000FF !important;
+}

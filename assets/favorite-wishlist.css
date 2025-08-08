@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    padding: 0px 30px;
+    padding: 0px 0px 0px 30px;
 }
 
 @media screen and (max-width: 768px) {
@@ -70,6 +70,12 @@
 
 .wishlist-remove-btn:hover {
     transform: scale(1.1);
+}
+
+.wishlist-remove-btn:focus,
+.wishlist-remove-btn:focus-visible,
+.wishlist-remove-btn:focus-within {
+    background-color: #fff !important;
 }
 
 .wishlist-remove-btn .spinner .spinner-img{
